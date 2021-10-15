@@ -38,9 +38,9 @@ user = os.environ['USER']
 
 #import supporting scripts here
 #need to add to python path in case not set correctly already
-sys.path.insert(0,f'/home/{user}/redox_screening/')
+sys.path.insert(0,f'/home/{user}/redox_screen')
 
-from redox_screen.util import open_csv,unlock_csv,look_for_restart,par_proc
+from redox_screen.util import open_csv,unlock_csv,look_for_restart,par_proc,radical_electrons
 from redox_screen.excitation_flow import excitation_flow
 from redox_screen.S1_reactant_flow import S1_reactant_flow
 from redox_screen.reduction_flow import reduction_flow
