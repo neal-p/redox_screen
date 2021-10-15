@@ -405,6 +405,8 @@ if __name__ == '__main__':
 
     if len(arguments.names) != len(arguments.substituents):
         raise IndexError('There must be equal number of substituents and names')
+    if not arguments.smiles:
+        parser.error('No input smiles given, use -s or --smiles to specify the molecule to compute')
 
     main(arguments.smiles,arguments.mol_name,
          arguments.nconfs,
