@@ -8,8 +8,8 @@ Workflow for screening ground state and excited state redox properties
 ## How to get this code:
 Download the scripts to your home directory:
 ```
-cd
-git clone
+cd ~/
+git clone https://github.com/neal-p/redox_screen.git
 ```
 
 ## How to use this code:
@@ -19,7 +19,7 @@ git clone
 cd redox_screen
 ls -la
 ```
-This `redox_screen.sbatch` file is the main file for the user to interact with. This script submits the workflow with the passed input arguments
+This `redox_screen.sbatch` file ^^ is the main file for the user to interact with. This script submits the workflow with the passed input arguments
 
 You should copy the `redox_screen.sbatch` file to where you want to run the screen
 
