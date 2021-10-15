@@ -40,11 +40,11 @@ user = os.environ['USER']
 #need to add to python path in case not set correctly already
 sys.path.insert(0,f'/home/{user}/redox_screening/')
 
-from UCLA_workflow.util import open_csv,unlock_csv,look_for_restart,par_proc
-from UCLA_workflow.excitation_flow import excitation_flow
-from UCLA_workflow.S1_reactant_flow import S1_reactant_flow
-from UCLA_workflow.reduction_flow import reduction_flow
-from UCLA_workflow.oxidation_flow import oxidation_flow
+from redox_screen.util import open_csv,unlock_csv,look_for_restart,par_proc
+from redox_screen.excitation_flow import excitation_flow
+from redox_screen.S1_reactant_flow import S1_reactant_flow
+from redox_screen.reduction_flow import reduction_flow
+from redox_screen.oxidation_flow import oxidation_flow
 
 ###################################################################
 
@@ -392,7 +392,7 @@ def main(smiles,mol_name,nconfs,dummy,substituents,names,no_reduction=False,no_o
 if __name__ == '__main__':
 
     #parse arguments
-    parser = ArgumentParser('UCLA organic photosensitizer workflow',fromfile_prefix_chars='@')
+    parser = ArgumentParser('REDOX_SCREEN: Organic Photosensitizer Workflow',fromfile_prefix_chars='@')
     parser.add_argument('-s','--smiles',type=str,dest='smiles')
     parser.add_argument('--mol_name',type=str,dest='mol_name',default='my_mol')
     parser.add_argument('--substituents',dest='substituents',type=str,nargs='+',default=['[*:1][H]','[*:1]OC','[*:1]OC(F)(F)F','[*:1]C','[*:1]C(F)(F)F','[*:1][N+](=O)[O-]','[*:1]F','[*:1]Cl','[*:1]C#N'])
