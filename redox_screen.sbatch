@@ -33,7 +33,7 @@ from datetime import datetime
 from argparse import ArgumentParser
 import multiprocessing as mp
 
-mpnproc = os.environ['SLURM_CPUS_PER_TASK']
+mpnproc = int(os.environ['SLURM_CPUS_PER_TASK'])
 user = os.environ['USER']
 
 #import supporting scripts here
