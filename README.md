@@ -1,6 +1,8 @@
 # Redox_Screen
 Workflow for screening ground state and excited state redox properties
 
+<img src="redox_screen.png" width="75%" align="middle" />
+
 ## Requirements:
   1. This workflow uses the workflowV2 codebase. Be sure that you have an active conda envirionment set up to use it before attempting to screen any redox potentials
   2. A SMILES string with at least 1 [Y] attachment point for substitution (if no substitution is desired, then add one anyway, and you can just substitute with 'H'
