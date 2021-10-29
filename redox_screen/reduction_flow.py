@@ -49,13 +49,13 @@ def S0_reduction_flow(reduceds,mol_names,dftmethod,solvent,partition,output_ener
         os.chdir('../')
 
         df = open_csv(output_energies,'S0-reduced')
-        df['S0-reduced_free_energy'] = [reduced.energy for reduced in reduceds]
-        df['S0_reduction_free_energy (eV)'] = (df['S0-reduced_free_energy'] - df['S0_reactant_free_energy']) * 27.211
+        df['S0_reduced_free_energy'] = [reduced.energy for reduced in reduceds]
+        df['S0_reduction_free_energy (eV)'] = (df['S0_reduced_free_energy'] - df['S0_reactant_free_energy']) * 27.211
         df['S0_reduction_potential (V)'] =  - df['S0_reduction_free_energy (eV)'] - 4.44
   
         #Excited state of the species absorbing light and ground state of the product of the redox reaction
         if 'S1_reactant_free_energy' in df.columns:
-            df['S1_reduction_free_energy (eV)'] = (df['S0-reduced_free_energy'] - df['S1_reactant_free_energy']) * 27.211
+            df['S1_reduction_free_energy (eV)'] = (df['S0_reduced_free_energy'] - df['S1_reactant_free_energy']) * 27.211
             df['S1_reduction_potential (V)'] =  - df['S1_reduction_free_energy (eV)'] - 4.44
  
         df.to_csv(output_energies,index=False)
